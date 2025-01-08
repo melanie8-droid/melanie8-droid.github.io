@@ -33,10 +33,11 @@
 	text.setAttribute("scale", "1.5 1.5 1.5")
 	text.setAttribute("position", `-1.0 1.0 -0.5`)
 
-//for MOBILE DEVICE controls
+	//for MOBILE DEVICE controls
 	let message = "TAP/CLICK"
 	let touchingNow = false
 	//END OF mobile device let statements
+
 		
 		
 
@@ -109,6 +110,7 @@
 				message = ""
 			}
 		}, { passive: false })
+
 		
         
         
@@ -134,13 +136,16 @@
 		for (let wall of walls) {
 			wall.blocksYou()
 		}
-   //mobile device: MOVE FORWARD
+		
+		
+		
+		//mobile device: MOVE FORWARD
 		if (touchingNow == true) {
 			let angle = camera.getAttribute("rotation") 
 			let changeX = 0.25 * Math.sin(angle.y * Math.PI / 180)
 			let changeZ = 0.25 * Math.cos(angle.y * Math.PI / 180) 
 			cameraPos.x -= changeX/4; 
-			cameraPos.z -= cshangeZ/4; 
+			cameraPos.z -= changeZ/4; 
 		}
 		
 		
@@ -187,13 +192,16 @@
 
 	}
 
+
+
+
 	function game_over() {
-			  cameraPos.x = cameraFinalX
-			  cameraPos.z = cameraFinalZ
-		 	  text.setAttribute("value", "Congrats!")
-  
-			  setTimeout(game_over, 10)
-			}
+		  cameraPos.x = cameraFinalX
+		  cameraPos.z = cameraFinalZ
+	 	  text.setAttribute("value", "Congrats!")
+
+		  setTimeout(game_over, 10)
+		}
 
 
 	//TYPES OF OBJECTS
@@ -423,5 +431,4 @@
 </body>
 
 </html>
-
 
