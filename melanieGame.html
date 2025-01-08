@@ -144,13 +144,7 @@
 		}
 		
 		
-		function game_over() {
-			  cameraPos.x = cameraFinalX
-			  cameraPos.z = cameraFinalZ
-		 	  text.setAttribute("value", "Congrats!")
-  
-			  setTimeout(game_over, 10)
-			}
+
 		
 		
 		if (coins.every(coin => coin.collected==true)) {
@@ -193,7 +187,13 @@
 
 	}
 
-
+	function game_over() {
+			  cameraPos.x = cameraFinalX
+			  cameraPos.z = cameraFinalZ
+		 	  text.setAttribute("value", "Congrats!")
+  
+			  setTimeout(game_over, 10)
+			}
 
 
 	//TYPES OF OBJECTS
